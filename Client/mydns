@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Verifică dacă argumentul (comanda) este specificat
+if [ -z "$1" ]; then
+  echo "Utilizare: mydns <comanda>"
+  exit 1
+fi
+
+# Trimite comanda către server folosind netcat (UDP)
+echo "$1" | timeout 1 nc -u -p 8888 172.20.10.4 1053

@@ -1,0 +1,11 @@
+zone "example.com"
+{
+    type master;
+    file "/home/alexandra/Proiect_PSO/db.example.com"; 
+};
+
+zone "mta.ro" 
+{
+    type master;
+    file "/home/alexandra/Proiect_PSO/db.mta.ro"; 
+};
