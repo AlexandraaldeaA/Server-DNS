@@ -22,7 +22,9 @@
 #define EDNS_PAYLOAD_SIZE 1232
 #define COOKIE_OPTION_CODE 10
 #define CLIENT_COOKIE_LEN 8
-#define LIMIT_CACHE 50
+#define LIMIT_CACHE 2
+
+std::ofstream logFile;
 
 struct DNS_HEADER
 {
@@ -97,6 +99,8 @@ struct CACHE {
 	unsigned char* domain_name;
 	unsigned char* ip_address;
 	uint16_t type;
+	unsigned char* reverse_ip;
+    unsigned char* resolved_name;
 	int timer;
 };
 

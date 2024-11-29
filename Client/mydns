@@ -1,10 +1,22 @@
 #!/bin/bash
 
-# Verifică dacă argumentul (comanda) este specificat
 if [ -z "$1" ]; then
-  echo "Utilizare: mydns <comanda>"
+  echo "Utilizare: mydns <nume_domeniu> : IPv4"
+  echo "Utilizare: mydns -AAAA <nume_domeniu> : IPv6"
+  echo "Utilizare: mydns -MX <nume_domeniu> : Mail Exchange"
+  echo "Utilizare: mydns -NS <nume_domeniu> : Name Server"
+  echo "Utilizare: mydns -X <adresa_IPv4> : Reverse"
   exit 1
 fi
 
-# Trimite comanda către server folosind netcat (UDP)
-echo "$1" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+if [[ "$1" == "-X" && -n "$2" ]]; then
+    echo "12 $2" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+elif [[ "$1" == "-MX" && -n "$2" ]]; then
+    echo "15 $2" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+elif [[ "$1" == "-AAAA" && -n "$2" ]]; then
+    echo "28 $2" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+elif [[ "$1" == "-NS" && -n "$2" ]]; then
+    echo "2 $2" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+else
+    echo "$1" | timeout 1 nc -u -p 8888 172.20.10.4 1053
+fi

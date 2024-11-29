@@ -3,10 +3,7 @@ INSTALL_PATH = /usr/local/bin
 
 .PHONY: all clean 
 
-all:  stop install
-
-stop:
-	sudo systemctl stop systemd-resolved
+all: install
 
 install:
 	@if [ -f $(MYDNS_SCRIPT) ]; then \
