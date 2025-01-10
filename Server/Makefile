@@ -1,25 +1,22 @@
 CC = g++
+CXXFLAGS = -std=c++14 -lpthread -I./ -I./include
+
 TARGET = MasterServer
-SRC = MasterServer.cpp
-MYDNS_SCRIPT = mydns
+SRC = MasterServer.cpp ThreadPool.cpp
 INSTALL_PATH = /usr/local/bin
 
-.PHONY: all clean
+.PHONY: all clean run
 
-all: $(TARGET) stop install start
+all: $(TARGET) stop run
 
 $(TARGET): $(SRC)
-	$(CC) -o $(TARGET) $(SRC)
+	$(CC) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
 stop:
 	sudo systemctl stop systemd-resolved
 
-install:
-	@if [ -f $(MYDNS_SCRIPT) ]; then \
-		chmod +x $(MYDNS_SCRIPT); \
-		sudo mv $(MYDNS_SCRIPT) $(INSTALL_PATH); \
-	fi
-start:
+run: $(TARGET)
 	sudo ./$(TARGET)
+
 clean:
 	rm -f $(TARGET)

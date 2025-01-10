@@ -1,15 +1,21 @@
-MYDNS_SCRIPT = mydns
+CC = g++
+CXXFLAGS = -std=c++14 -pthread -g
+TARGET = mydns
+SRC = client.cpp
 INSTALL_PATH = /usr/local/bin
 
-.PHONY: all clean 
+.PHONY: all clean run install
 
-all: install
+all: clean $(TARGET) install
 
-install:
-	@if [ -f $(MYDNS_SCRIPT) ]; then \
-		chmod +x $(MYDNS_SCRIPT); \
-		sudo mv $(MYDNS_SCRIPT) $(INSTALL_PATH); \
-	fi
+$(TARGET): $(SRC)
+	$(CC) $(CXXFLAGS) -o $(TARGET) $(SRC)
+
+run: $(TARGET)
+	./$(TARGET)
+
+install: $(TARGET)
+	sudo cp $(TARGET) $(INSTALL_PATH)
 
 clean:
-	sudo rm -f $(INSTALL_PATH)/$(MYDNS_SCRIPT)
+	rm -f $(TARGET)

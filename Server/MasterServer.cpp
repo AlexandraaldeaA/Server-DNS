@@ -1,30 +1,40 @@
-#include "dns.h"
+#include "MasterServer.h"
+#include "ThreadPool.h"
 
-void dig_dns_request(int,int,int,unsigned char*,sockaddr_in,socklen_t);
-int verify_cache(int,unsigned char*,int,sockaddr_in,socklen_t,int);
-void add_cache(unsigned char*,struct RES_RECORD*,int);
-bool verify_master_file(int,sockaddr_in,socklen_t,unsigned char*,int,int);
-void add_from_zone_file(struct RES_RECORD*,unsigned char*,bool,int);
+void dig_dns_request(int, int, int, unsigned char*, sockaddr_in, socklen_t);
+int verify_cache(int, unsigned char*, int, sockaddr_in, socklen_t, int);
+void add_cache(unsigned char*, struct RES_RECORD*, int);
+bool verify_master_file(int, sockaddr_in, socklen_t, unsigned char*, int, int);
+void add_from_zone_file(struct RES_RECORD*, unsigned char*, bool, int);
 void update_cache_timers();
-void change_dns_format_name(unsigned char*,unsigned char*);
-void forward_dns_request(int,int,sockaddr_in,socklen_t,unsigned char*,int);
-bool is_plain_text_domain(const unsigned char*,int);
-unsigned char* read_name(unsigned char*,unsigned char*,int*);
-void reverse_dns_request(int,int,sockaddr_in,socklen_t,char*);
-bool verify_reverse_file(char*,char*);
-void handle_dns_request(int,int,sockaddr_in,socklen_t,unsigned char*,int);
-void add_edns_section(unsigned char*,int*);
+void change_dns_format_name(unsigned char*, unsigned char*);
+void forward_dns_request(int, int, sockaddr_in, socklen_t, unsigned char*, int);
+bool is_plain_text_domain(unsigned char*, int&);
+unsigned char* read_name(unsigned char*, unsigned char*, int*);
+void reverse_dns_request(int, int, sockaddr_in, socklen_t, char*);
+bool verify_reverse_file(char*, char*);
+void handle_dns_request(int, int, sockaddr_in, socklen_t, unsigned char*, int);
+void add_edns_section(unsigned char*, int*);
 void init_log_file(std::ofstream&);
 void log_message(const std::string&,std::ofstream&);
+void graceful_shutdown(int , int , int , int );
 
 int main() 
 {
     init_log_file(logFile);
-    int sockfd = socket(AF_INET, SOCK_DGRAM, 0); //UDP
-
-    if (sockfd < 0)
+    int sockfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP socket
+    if (sockfd < 0) 
     {
         log_message("Failed to create socket!", logFile);
+        return EXIT_FAILURE;
+    }
+
+    // Configure to reuse address
+    int opt = 1;
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) 
+    {
+        log_message("Failed to set socket options!", logFile);
+        close(sockfd);
         return EXIT_FAILURE;
     }
 
@@ -38,10 +48,13 @@ int main()
         log_message("Bind failed!", logFile);
         close(sockfd);
         return EXIT_FAILURE;
+    } 
+    else 
+    {
+        log_message("Bind successful!", logFile);
     }
 
-    int google_sockfd = socket(AF_INET, SOCK_DGRAM, 0); //UDP
-
+    int google_sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (google_sockfd < 0) 
     {
         log_message("Failed to create Google DNS socket!", logFile);
@@ -51,69 +64,219 @@ int main()
 
     log_message("DNS Server started...", logFile);
 
-    unsigned char* buffer=(unsigned char*)malloc(sizeof(unsigned char)*BUFFER_SIZE); 
+    sigset_t mask;
+    sigemptyset(&mask);
+    sigaddset(&mask, SIGINT);  // CTRL+C
+    sigaddset(&mask, SIGQUIT); // CTRL+\
 
-    struct timeval timeout;
-    fd_set readfds;
+    if (pthread_sigmask(SIG_BLOCK, &mask, nullptr) != 0) 
+    {
+        perror("pthread_sigmask");
+        return EXIT_FAILURE;
+    }
+
+    int sfd = signalfd(-1, &mask, 0); 
+    if (sfd == -1) 
+    {
+        log_message("Failed to create signalfd!", logFile);
+        close(sockfd);
+        return EXIT_FAILURE;
+    }
+
+    int epoll_fd = epoll_create1(0);
+    if (epoll_fd < 0) 
+    {
+        log_message("Failed to create epoll instance!", logFile);
+        close(sockfd);
+        return EXIT_FAILURE;
+    }
+
+    struct epoll_event event, events[MAX_EVENTS];
+    event.events = EPOLLIN;
+
+    event.data.fd=sfd;
+    if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, sfd, &event) < 0) 
+    {
+        log_message("Failed to add signalfd to epoll!", logFile);
+        close(sockfd);
+        return EXIT_FAILURE;
+    }
+
+    event.data.fd = sockfd;
+    if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, sockfd, &event) < 0) 
+    {
+        log_message("Failed to add socket to epoll!", logFile);
+        close(sockfd);
+        return EXIT_FAILURE;
+    }
+
+    int flags = fcntl(STDIN_FILENO, F_GETFL, 0);
+    fcntl(STDIN_FILENO, F_SETFL, flags | O_NONBLOCK); //setez sa fie non-blocking ca sa nu se blocheze daca primeste input incomplet, greseala, etc
+
+    event.data.fd = STDIN_FILENO;
+    if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, STDIN_FILENO, &event) < 0) 
+    {
+        log_message("Failed to add STDIN to epoll!", logFile);
+        close(sockfd);
+        return EXIT_FAILURE;
+    }
+
+    ThreadPool pool(MAX_EVENTS);
 
     while (true) 
     {
-        timeout.tv_sec = 1;
-        timeout.tv_usec = 0;
+        int event_count = epoll_wait(epoll_fd, events, MAX_EVENTS, TIMEOUT_MS);
 
-        FD_ZERO(&readfds);
-        FD_SET(sockfd, &readfds);
-
-        int activity = select(sockfd + 1, &readfds, NULL, NULL, &timeout);
-
-        if (activity < 0) 
+        if (event_count == 0) 
         {
-            log_message("Select failed!", logFile);
-            exit(EXIT_FAILURE);
-        } 
-        else if (activity == 0) 
-        {
-            std::cout<<"aici"<<std::endl;
+            log_message("No activity - updating cache timers.", logFile);
             update_cache_timers();
-        } 
-        else 
+            continue;
+        }
+
+        for (int i = 0; i < event_count; ++i) 
         {
-            if (FD_ISSET(sockfd, &readfds))
+            if (events[i].data.fd==sockfd) 
             {
-                memset(buffer, 0, BUFFER_SIZE);
+                std::shared_ptr<std::vector<unsigned char>> buffer = std::make_shared<std::vector<unsigned char>>(BUFFER_SIZE);
+                memset(buffer->data(), 0, BUFFER_SIZE);
+
                 struct sockaddr_in client;
                 socklen_t client_len = sizeof(client);
 
-                int n = recvfrom(sockfd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&client, &client_len);
-
-                std::cout<<"after recv"<<std::endl;
-
-                buffer[strlen((char*)(buffer))-1]='\0';
-
-                std::cout<<buffer<<std::endl;
-
+                std::lock_guard<std::mutex> lock(socket_mutex);
+                int n = recvfrom(sockfd, buffer->data(), BUFFER_SIZE, 0, (struct sockaddr*)&client, &client_len);
                 if (n < 0) 
                 {
                     log_message("Recvfrom failed!", logFile);
-                    exit(EXIT_FAILURE);
+                    continue;
                 }
 
-                handle_dns_request(sockfd,google_sockfd,client,client_len,buffer,n);
-                std::cout<<"finished"<<std::endl;
+                if (n > 0) 
+                {
+                    pool.enqueue([buffer, n, sockfd, google_sockfd, client, client_len]() 
+                    {
+                        log_message("Thread started processing request.", logFile);
+                        try 
+                        {
+                            handle_dns_request(sockfd, google_sockfd, client, client_len, buffer->data(), n);
+                        } 
+                        catch (const std::exception& e) 
+                        {
+                            log_message(std::string("Error in thread: ") + e.what(), logFile);
+                        }
+                        log_message("Thread finished processing request.", logFile);
+                    });
+                }
+            }
+            else if (events[i].data.fd == sfd) 
+            {
+                // Capturam semnalele SIGINT și SIGQUIT
+                struct signalfd_siginfo fdsi;
+                read(sfd, &fdsi, sizeof(struct signalfd_siginfo));
+
+                if (fdsi.ssi_signo == SIGINT) 
+                {
+                    log_message("SIGINT received. Initiating graceful shutdown...", logFile);
+                    graceful_shutdown(sockfd, google_sockfd, epoll_fd, sfd);
+                } 
+                else if (fdsi.ssi_signo == SIGQUIT) 
+                {
+                    log_message("SIGQUIT received. Stopping server immediately...", logFile);
+                    graceful_shutdown(sockfd, google_sockfd, epoll_fd, sfd);
+                }
+            }
+            else if (events[i].data.fd == STDIN_FILENO) 
+            {
+                std::string input;
+                std::getline(std::cin, input);
+                if (input == "exit") 
+                {
+                    log_message("Exit command received. Shutting down...", logFile);
+                    graceful_shutdown(sockfd, google_sockfd, epoll_fd, sfd);
+                }
             }
         }
     }
+    graceful_shutdown(sockfd, google_sockfd, epoll_fd, sfd);
+}
 
-    close(sockfd);
-    close(google_sockfd);
-    logFile.close();
-    return 0;
+void handle_dns_request(int sockfd, int google_sockfd, sockaddr_in client, socklen_t client_len, unsigned char* buffer, int n) 
+{
+    if (strncmp((char*)buffer, "12 ", 3) == 0) // -X
+    { 
+        char ip_address[INET_ADDRSTRLEN];
+        sscanf((char*)buffer + 3, "%s", ip_address);
+        reverse_dns_request(sockfd, google_sockfd, client, client_len, ip_address);
+    } 
+    else if (strncmp((char*)buffer, "15 ", 3) == 0) // -MX
+    { 
+        unsigned char domain_name[BUFFER_SIZE];
+        sscanf((char*)buffer + 3, "%s", domain_name);
+        log_message("MX request.", logFile);
+
+        std::lock_guard<std::mutex> lock(cacheMutex); 
+        if (verify_cache(sockfd, domain_name, n, client, client_len, 15) == 0) 
+        {
+            if (verify_master_file(sockfd, client, client_len, domain_name, n, 15) == 0) 
+            {
+                forward_dns_request(sockfd, google_sockfd, client, client_len, domain_name, 15);
+            }
+        }
+    } 
+    else if (strncmp((char*)buffer, "28 ", 3) == 0) // -AAAA
+    {
+        unsigned char domain_name[BUFFER_SIZE];
+        sscanf((char*)buffer + 3, "%s", domain_name);
+        log_message("AAAA request.", logFile);
+
+        std::lock_guard<std::mutex> lock(cacheMutex); 
+        if (verify_cache(sockfd, domain_name, n, client, client_len, 28) == 0) 
+        {
+            if (verify_master_file(sockfd, client, client_len, domain_name, n, 28) == 0) 
+            {
+                forward_dns_request(sockfd, google_sockfd, client, client_len, domain_name, 28);
+            }
+        }
+    } 
+    else if (strncmp((char*)buffer, "2 ", 2) == 0) // -NS
+    {
+        unsigned char domain_name[BUFFER_SIZE];
+        sscanf((char*)buffer + 2, "%s", domain_name);
+        log_message("NS request.", logFile);
+
+        std::lock_guard<std::mutex> lock(cacheMutex); 
+        if (verify_cache(sockfd, domain_name, n, client, client_len, 2) == 0) 
+        {
+            if (verify_master_file(sockfd, client, client_len, domain_name, n, 2) == 0) 
+            {
+                forward_dns_request(sockfd, google_sockfd, client, client_len, domain_name, 2);
+            }
+        }
+    } 
+    else if (is_plain_text_domain(buffer, n) == 0) 
+    {
+        log_message("Dig request.", logFile);
+        dig_dns_request(sockfd, google_sockfd, n, buffer, client, client_len);
+    } 
+    else 
+    {
+        log_message("IPv4 request.", logFile);
+        std::lock_guard<std::mutex> lock(cacheMutex); 
+        if (verify_cache(sockfd, buffer, n, client, client_len, 1) == 0) 
+        {
+            if (verify_master_file(sockfd, client, client_len, buffer, n, 1) == 0) 
+            {
+                forward_dns_request(sockfd, google_sockfd, client, client_len, buffer, 1);
+            }
+        }
+    }
 }
 
 void dig_dns_request(int sockfd, int google_sockfd, int n, unsigned char* buffer,sockaddr_in client,socklen_t client_len) 
 {
     std::cout<<"dig"<<std::endl;
-    log_message("DIG request", logFile);
+    log_message("DIG request.", logFile);
     std::cout<<"Received from client: "<<buffer<<std::endl;
 
     DNS_HEADER* dns = (DNS_HEADER*)buffer;
@@ -150,31 +313,33 @@ void dig_dns_request(int sockfd, int google_sockfd, int n, unsigned char* buffer
     log_message("DNS response sent to client!", logFile);
 }
 
-int verify_cache(int sockfd,unsigned char* domain_name,int n,sockaddr_in client,socklen_t client_len,int qtype)
+int verify_cache(int sockfd, unsigned char* domain_name, int n, sockaddr_in client, socklen_t client_len, int qtype)
 {
     unsigned char buffer[BUFFER_SIZE];
     memset(buffer, 0, sizeof(buffer));
-    for(int i=0;i<cache.size();i++)
+
+    for (int i = 0; i < cache.size(); i++)
     {
-        if ((cache[i].domain_name && strcmp((char*)domain_name, (char*)cache[i].domain_name) == 0) || (cache[i].resolved_name && strcmp((char*)domain_name, (char*)cache[i].resolved_name) == 0))
+        if ((cache[i].domain_name && strcmp((char*)domain_name, (char*)cache[i].domain_name) == 0) || 
+            (cache[i].resolved_name && strcmp((char*)domain_name, (char*)cache[i].resolved_name) == 0))
         {
-            if(cache[i].type==qtype)
+            if (cache[i].type == qtype)
             {
-                std::cout<<"cache"<<std::endl;
-                cache[i].timer=86400;
-        
-                strcat((char*)buffer,"Authoritative");
-                strcat((char*)buffer,"\n");
-                strcat((char*)buffer,"Name: ");
-                strcat((char*)buffer,(char*)domain_name);
-                strcat((char*)buffer,"\n");
-                strcat((char*)buffer,"Answer Section: ");
-                if(cache[i].ip_address)
-                    strcat((char*)buffer,(char*)cache[i].ip_address);
-                else if(cache[i].reverse_ip)
-                    strcat((char*)buffer,(char*)cache[i].reverse_ip);
-                strcat((char*) buffer,"\0");
-                strcat((char*) buffer,"\n");
+                std::cout << "cache" << std::endl;
+                cache[i].timer = 86400;
+
+                strcat((char*)buffer, "Authoritative");
+                strcat((char*)buffer, "\n");
+                strcat((char*)buffer, "Name: ");
+                strcat((char*)buffer, (char*)domain_name);
+                strcat((char*)buffer, "\n");
+                strcat((char*)buffer, "Answer Section: ");
+                if (cache[i].ip_address)
+                    strcat((char*)buffer, (char*)cache[i].ip_address);
+                else if (cache[i].reverse_ip)
+                    strcat((char*)buffer, (char*)cache[i].reverse_ip);
+                strcat((char*)buffer, "\0");
+                strcat((char*)buffer, "\n");
 
                 size_t length = strlen(reinterpret_cast<const char*>(buffer));
                 log_message("From cache.", logFile);
@@ -193,6 +358,13 @@ int verify_cache(int sockfd,unsigned char* domain_name,int n,sockaddr_in client,
 
 bool verify_master_file(int sockfd,sockaddr_in client,socklen_t client_len,unsigned char* domain_name,int n,int qtype)
 {
+    // Elimină newline-ul din domain_name, dacă există
+    int len = strlen((char*)domain_name);
+    if (len > 0 && domain_name[len - 1] == '\n') 
+    {
+        domain_name[len - 1] = '\0';
+    }
+
     bool ok=0;
 
     std::ifstream file("MasterFile");
@@ -221,7 +393,7 @@ bool verify_master_file(int sockfd,sockaddr_in client,socklen_t client_len,unsig
     std::string line_to_find = "zone \"" + str_processed_name + "\"";
 
     while(std::getline(file,line))
-    {   
+    { 
         if (line==line_to_find) 
         {
             std::cout<<"masterFile"<<std::endl;
@@ -244,6 +416,7 @@ bool verify_master_file(int sockfd,sockaddr_in client,socklen_t client_len,unsig
             add_from_zone_file(answer,processed_name,ok,qtype);
 
             log_message("From MasterFile.", logFile);
+            std::lock_guard<std::mutex> lock(masterfile); 
             add_cache(domain_name,answer,0);
 
             unsigned char client_buffer[BUFFER_SIZE];
@@ -273,7 +446,7 @@ bool verify_master_file(int sockfd,sockaddr_in client,socklen_t client_len,unsig
     file.close();
     free(processed_name);
     return 0;
-}                               
+}                             
 
 void add_from_zone_file( struct RES_RECORD* answer, unsigned char* qname,bool ok,int qtype)
 {
@@ -452,7 +625,6 @@ void add_cache(unsigned char* domain_name,struct RES_RECORD* answer,int from_for
     }
     else
     {
-        std::cout<<"0 sau 1 12"<<std::endl;
         entry.domain_name=nullptr;
         entry.ip_address=nullptr;
         strcpy((char*)entry.resolved_name,(char*)domain_name);
@@ -816,16 +988,33 @@ void change_dns_format_name(unsigned char * dns, unsigned char* domain_name)
     *dns++='\0'; //3www3mta2ro
 }
 
-bool is_plain_text_domain(const unsigned char* buffer, int n) 
+bool is_plain_text_domain(unsigned char* buffer, int& n) 
 {
-    // Verificăm dacă bufferul conține doar caractere ASCII eligibile pentru un domeniu
+    int i = 0;
+    int j = 0;
+    
+    // parcurgem bufferul si eliminam caracterele de linie noua (\n)
+    while (i < n) 
+    {
+        if (buffer[i] == '\n') 
+        {
+            // le ignoram 
+            i++;
+            continue;
+        }
+        buffer[j++] = buffer[i++];
+    }
+    n = j;  // actualizare dimensiune
+
+    // verificare ascii caractere eligibile
     for (int i = 0; i < n && buffer[i] != '\0'; ++i) 
     {
         if (!std::isalnum(buffer[i]) && buffer[i] != '.' && buffer[i] != '-') 
         {
-            return false;  // Dacă găsim un caracter neeligibil, nu e cerere simplă
+            return false;  // neeligibil, nu e cerere simpla
         }
     }
+    
     return true;
 }
 
@@ -932,6 +1121,7 @@ void reverse_dns_request(int sockfd, int google_sockfd, sockaddr_in client, sock
     snprintf(reverse_ip, sizeof(reverse_ip), "%d.%d.%d.%d.in-addr.arpa", d, c, b, a);
 
     //cache verify
+    std::lock_guard<std::mutex> lock(reverse); 
     for (auto& entry : cache) 
     {
         if (entry.reverse_ip && strcmp((char*)entry.reverse_ip, reverse_ip) == 0) 
@@ -1001,76 +1191,6 @@ bool verify_reverse_file(char* reverse_ip, char* resolved_name)
     return 0;
 }
 
-void handle_dns_request(int sockfd, int google_sockfd, sockaddr_in client, socklen_t client_len, unsigned char* buffer,int n)
-{
-    if (strncmp((char*)buffer, "12 ", 3) == 0) //-X
-    {
-        char ip_address[INET_ADDRSTRLEN];
-        sscanf((char*)buffer + 3, "%s", ip_address);
-        reverse_dns_request(sockfd,google_sockfd, client, client_len, ip_address);
-    }
-    else if (strncmp((char*)buffer, "15 ", 3) == 0) //-MX
-    {
-        unsigned char domain_name[BUFFER_SIZE];
-        sscanf((char*)buffer + 3, "%s", domain_name);
-        log_message("MX request.", logFile);
-
-        if(verify_cache(sockfd,domain_name,n,client,client_len,15)==0)
-        {
-            if(verify_master_file(sockfd,client,client_len,domain_name,n, 15)==0)
-            {   
-                forward_dns_request(sockfd,google_sockfd,client,client_len,domain_name,15); //doar ipv4
-            }
-        }
-        
-    }
-    else if (strncmp((char*)buffer, "28 ", 3) == 0) //-AAAA
-    {
-        unsigned char domain_name[BUFFER_SIZE];
-        sscanf((char*)buffer + 3, "%s", domain_name);
-        log_message("AAAA request.", logFile);
-
-        if(verify_cache(sockfd,domain_name,n,client,client_len,28)==0)
-        {
-            if(verify_master_file(sockfd,client,client_len,domain_name,n, 28)==0)
-            {
-                forward_dns_request(sockfd,google_sockfd,client,client_len,domain_name,28); //doar ipv4
-            }
-        }
-        
-    }
-    else if (strncmp((char*)buffer, "2 ", 2) == 0) //-NS
-    {
-        unsigned char domain_name[BUFFER_SIZE];
-        sscanf((char*)buffer + 2, "%s", domain_name);
-        log_message("NS request.", logFile);
-
-        if(verify_cache(sockfd,domain_name,n,client,client_len,2)==0)
-        {
-            if(verify_master_file(sockfd,client,client_len,domain_name,n, 2)==0)
-            {
-                forward_dns_request(sockfd,google_sockfd,client,client_len,domain_name,2); //doar ipv4
-            }
-        }
-        
-    }
-    else if(is_plain_text_domain(buffer, n)==0) 
-    {
-        dig_dns_request(sockfd,google_sockfd,n,buffer,client,client_len);
-    }
-    else
-    {
-        log_message("IPv4 request.", logFile);
-        if(verify_cache(sockfd,buffer,n,client,client_len,1)==0)
-        {
-            if(verify_master_file(sockfd,client,client_len,buffer,n,1)==0)
-            {
-                forward_dns_request(sockfd,google_sockfd,client,client_len,buffer,1); //doar ipv4
-            }
-        }
-    }
-}
-
 void add_edns_section(unsigned char *buf, int *offset) 
 {
     struct EDNS *edns = (struct EDNS *)&buf[*offset];
@@ -1107,9 +1227,22 @@ void init_log_file(std::ofstream& logFile)
 
 void log_message(const std::string& message, std::ofstream& logFile) 
 {
-    if (logFile.is_open()) 
-    {
+    // folosim un lock_guard pentru a sincroniza accesul la fisier
+    std::lock_guard<std::mutex> lock(logMutex);  // protejeaza sectiunea de scriere in fisier
+
+    if (logFile.is_open()) {
         std::time_t now = std::time(nullptr);
         logFile << "[" << std::put_time(std::localtime(&now), "%Y-%m-%d %H:%M:%S") << "] " << message << std::endl;
     }
+}
+
+void graceful_shutdown(int sockfd, int google_sockfd, int epoll_fd, int sfd) 
+{
+    log_message("Shutting down server gracefully...", logFile);
+    close(sockfd);
+    close(google_sockfd);
+    close(epoll_fd);
+    close(sfd);
+    log_message("Resources released. Server stopped.", logFile);
+    exit(0);
 }

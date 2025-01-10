@@ -1,10 +1,13 @@
-#include<sys/socket.h>	
-#include<stdio.h>	
-#include<string.h>	
-#include<stdlib.h>	
-#include<arpa/inet.h>	
-#include<netinet/in.h>
-#include<unistd.h>
+#ifndef MASTERSERVER_H
+#define MASTERSERVER_H
+
+#include <sys/socket.h>	
+#include <stdio.h>	
+#include <string.h>	
+#include <stdlib.h>	
+#include <arpa/inet.h>	
+#include <netinet/in.h>
+#include <unistd.h>
 #include <iostream>
 #include <vector>
 #include <fcntl.h>
@@ -13,7 +16,11 @@
 #include <iomanip>
 #include <cstring>
 #include <algorithm>
-#include <sys/select.h>
+#include <sys/epoll.h>
+#include <signal.h>
+#include <sys/signalfd.h>
+#include <memory>
+#include <mutex>
 
 #define BUFFER_SIZE 512
 #define GOOGLE_DNS "8.8.8.8"
@@ -23,8 +30,15 @@
 #define COOKIE_OPTION_CODE 10
 #define CLIENT_COOKIE_LEN 8
 #define LIMIT_CACHE 2
+#define MAX_EVENTS 12
+#define TIMEOUT_MS 1000 
 
 std::ofstream logFile;
+std::mutex socket_mutex; // mutex pentru protejarea accesului la socket
+std::mutex logMutex;
+std::mutex cacheMutex;
+std::mutex reverse;
+std::mutex masterfile;
 
 struct DNS_HEADER
 {
@@ -105,3 +119,5 @@ struct CACHE {
 };
 
 std::vector<CACHE> cache;
+
+#endif
