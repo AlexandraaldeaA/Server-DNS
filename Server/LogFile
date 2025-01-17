@@ -2943,3 +2943,911 @@
 [2025-01-10 08:43:22] SIGINT received. Initiating graceful shutdown...
 [2025-01-10 08:43:22] Shutting down server gracefully...
 [2025-01-10 08:43:22] Resources released. Server stopped.
+[2025-01-16 10:03:42] Bind successful!
+[2025-01-16 10:03:42] DNS Server started...
+[2025-01-16 10:03:43] No activity - updating cache timers.
+[2025-01-16 10:03:44] No activity - updating cache timers.
+[2025-01-16 10:03:45] No activity - updating cache timers.
+[2025-01-16 10:03:46] No activity - updating cache timers.
+[2025-01-16 10:03:46] Thread started processing request.
+[2025-01-16 10:03:46] IPv4 request.
+[2025-01-16 10:03:46] Forwarding.
+[2025-01-16 10:03:47] Added to cache: www.google.com
+[2025-01-16 10:03:47] Thread finished processing request.
+[2025-01-16 10:03:47] No activity - updating cache timers.
+[2025-01-16 10:03:48] No activity - updating cache timers.
+[2025-01-16 10:03:49] No activity - updating cache timers.
+[2025-01-16 10:03:50] No activity - updating cache timers.
+[2025-01-16 10:03:51] No activity - updating cache timers.
+[2025-01-16 10:03:52] No activity - updating cache timers.
+[2025-01-16 10:03:53] No activity - updating cache timers.
+[2025-01-16 10:03:54] No activity - updating cache timers.
+[2025-01-16 10:03:55] No activity - updating cache timers.
+[2025-01-16 10:03:56] No activity - updating cache timers.
+[2025-01-16 10:03:57] No activity - updating cache timers.
+[2025-01-16 10:03:58] Thread started processing request.
+[2025-01-16 10:03:58] AAAA request.
+[2025-01-16 10:03:58] Forwarding.
+[2025-01-16 10:03:59] Added to cache: google.com
+[2025-01-16 10:03:59] Thread finished processing request.
+[2025-01-16 10:03:59] No activity - updating cache timers.
+[2025-01-16 10:04:00] No activity - updating cache timers.
+[2025-01-16 10:04:01] No activity - updating cache timers.
+[2025-01-16 10:04:02] No activity - updating cache timers.
+[2025-01-16 10:04:03] No activity - updating cache timers.
+[2025-01-16 10:04:04] No activity - updating cache timers.
+[2025-01-16 10:04:05] No activity - updating cache timers.
+[2025-01-16 10:04:06] No activity - updating cache timers.
+[2025-01-16 10:04:07] No activity - updating cache timers.
+[2025-01-16 10:04:08] Thread started processing request.
+[2025-01-16 10:04:08] NS request.
+[2025-01-16 10:04:08] From MasterFile.
+[2025-01-16 10:04:08] Removed from cache: www.google.com
+[2025-01-16 10:04:08] Added to cache: example.com
+[2025-01-16 10:04:08] Thread finished processing request.
+[2025-01-16 10:04:09] No activity - updating cache timers.
+[2025-01-16 10:04:10] No activity - updating cache timers.
+[2025-01-16 10:04:11] No activity - updating cache timers.
+[2025-01-16 10:04:12] No activity - updating cache timers.
+[2025-01-16 10:04:13] No activity - updating cache timers.
+[2025-01-16 10:04:14] No activity - updating cache timers.
+[2025-01-16 10:04:15] No activity - updating cache timers.
+[2025-01-16 10:04:16] No activity - updating cache timers.
+[2025-01-16 10:04:17] No activity - updating cache timers.
+[2025-01-16 10:04:18] No activity - updating cache timers.
+[2025-01-16 10:04:19] No activity - updating cache timers.
+[2025-01-16 10:04:20] No activity - updating cache timers.
+[2025-01-16 10:04:21] No activity - updating cache timers.
+[2025-01-16 10:04:21] Thread started processing request.
+[2025-01-16 10:04:21] MX request.
+[2025-01-16 10:04:21] From MasterFile.
+[2025-01-16 10:04:21] Thread finished processing request.
+[2025-01-16 10:04:22] No activity - updating cache timers.
+[2025-01-16 10:04:23] No activity - updating cache timers.
+[2025-01-16 10:04:24] No activity - updating cache timers.
+[2025-01-16 10:04:25] No activity - updating cache timers.
+[2025-01-16 10:04:26] No activity - updating cache timers.
+[2025-01-16 10:04:27] No activity - updating cache timers.
+[2025-01-16 10:04:28] No activity - updating cache timers.
+[2025-01-16 10:04:29] No activity - updating cache timers.
+[2025-01-16 10:04:30] No activity - updating cache timers.
+[2025-01-16 10:04:31] No activity - updating cache timers.
+[2025-01-16 10:04:32] No activity - updating cache timers.
+[2025-01-16 10:04:33] No activity - updating cache timers.
+[2025-01-16 10:04:34] No activity - updating cache timers.
+[2025-01-16 10:04:35] No activity - updating cache timers.
+[2025-01-16 10:04:36] No activity - updating cache timers.
+[2025-01-16 10:04:37] No activity - updating cache timers.
+[2025-01-16 10:04:38] No activity - updating cache timers.
+[2025-01-16 10:04:39] No activity - updating cache timers.
+[2025-01-16 10:04:40] No activity - updating cache timers.
+[2025-01-16 10:04:41] No activity - updating cache timers.
+[2025-01-16 10:04:42] No activity - updating cache timers.
+[2025-01-16 10:04:43] No activity - updating cache timers.
+[2025-01-16 10:04:44] No activity - updating cache timers.
+[2025-01-16 10:04:45] No activity - updating cache timers.
+[2025-01-16 10:04:46] No activity - updating cache timers.
+[2025-01-16 10:04:47] No activity - updating cache timers.
+[2025-01-16 10:04:48] No activity - updating cache timers.
+[2025-01-16 10:04:50] No activity - updating cache timers.
+[2025-01-16 10:04:51] No activity - updating cache timers.
+[2025-01-16 10:04:52] No activity - updating cache timers.
+[2025-01-16 10:04:53] No activity - updating cache timers.
+[2025-01-16 10:04:53] Thread started processing request.
+[2025-01-16 10:04:53] Dig request.
+[2025-01-16 10:04:53] DIG request.
+[2025-01-16 10:04:53] DNS response sent to client!
+[2025-01-16 10:04:53] Thread finished processing request.
+[2025-01-16 10:04:54] No activity - updating cache timers.
+[2025-01-16 10:04:55] No activity - updating cache timers.
+[2025-01-16 10:04:56] No activity - updating cache timers.
+[2025-01-16 10:04:57] No activity - updating cache timers.
+[2025-01-16 10:04:58] No activity - updating cache timers.
+[2025-01-16 10:04:58] SIGINT received. Initiating graceful shutdown...
+[2025-01-16 10:04:58] Shutting down server gracefully...
+[2025-01-16 10:04:58] Resources released. Server stopped.
+[2025-01-16 10:05:08] Bind successful!
+[2025-01-16 10:05:08] DNS Server started...
+[2025-01-16 10:05:09] No activity - updating cache timers.
+[2025-01-16 10:05:10] No activity - updating cache timers.
+[2025-01-16 10:05:11] No activity - updating cache timers.
+[2025-01-16 10:05:12] No activity - updating cache timers.
+[2025-01-16 10:05:13] No activity - updating cache timers.
+[2025-01-16 10:05:14] No activity - updating cache timers.
+[2025-01-16 10:05:15] No activity - updating cache timers.
+[2025-01-16 10:05:16] No activity - updating cache timers.
+[2025-01-16 10:05:17] No activity - updating cache timers.
+[2025-01-16 10:05:18] No activity - updating cache timers.
+[2025-01-16 10:05:19] No activity - updating cache timers.
+[2025-01-16 10:05:20] No activity - updating cache timers.
+[2025-01-16 10:05:21] No activity - updating cache timers.
+[2025-01-16 10:05:22] No activity - updating cache timers.
+[2025-01-16 10:05:23] No activity - updating cache timers.
+[2025-01-16 10:05:24] No activity - updating cache timers.
+[2025-01-16 10:05:25] No activity - updating cache timers.
+[2025-01-16 10:05:26] No activity - updating cache timers.
+[2025-01-16 10:05:27] No activity - updating cache timers.
+[2025-01-16 10:05:28] No activity - updating cache timers.
+[2025-01-16 10:05:29] No activity - updating cache timers.
+[2025-01-16 10:05:30] No activity - updating cache timers.
+[2025-01-16 10:05:30] SIGINT received. Initiating graceful shutdown...
+[2025-01-16 10:05:30] Shutting down server gracefully...
+[2025-01-16 10:05:30] Resources released. Server stopped.
+[2025-01-17 08:24:09] Bind successful!
+[2025-01-17 08:24:09] DNS Server started...
+[2025-01-17 08:24:10] No activity - updating cache timers.
+[2025-01-17 08:24:11] No activity - updating cache timers.
+[2025-01-17 08:24:12] No activity - updating cache timers.
+[2025-01-17 08:24:13] No activity - updating cache timers.
+[2025-01-17 08:24:14] Thread started processing request.
+[2025-01-17 08:24:14] IPv4 request.
+[2025-01-17 08:24:14] From MasterFile.
+[2025-01-17 08:24:14] Added to cache: www.example.com
+[2025-01-17 08:24:14] Thread finished processing request.
+[2025-01-17 08:24:15] No activity - updating cache timers.
+[2025-01-17 08:24:16] No activity - updating cache timers.
+[2025-01-17 08:24:17] No activity - updating cache timers.
+[2025-01-17 08:24:18] No activity - updating cache timers.
+[2025-01-17 08:24:19] No activity - updating cache timers.
+[2025-01-17 08:24:20] No activity - updating cache timers.
+[2025-01-17 08:24:21] No activity - updating cache timers.
+[2025-01-17 08:24:22] No activity - updating cache timers.
+[2025-01-17 08:24:23] No activity - updating cache timers.
+[2025-01-17 08:24:24] No activity - updating cache timers.
+[2025-01-17 08:24:24] Thread started processing request.
+[2025-01-17 08:24:24] NS request.
+[2025-01-17 08:24:24] Forwarding.
+[2025-01-17 08:24:24] Thread finished processing request.
+[2025-01-17 08:24:25] No activity - updating cache timers.
+[2025-01-17 08:24:26] No activity - updating cache timers.
+[2025-01-17 08:24:27] No activity - updating cache timers.
+[2025-01-17 08:24:28] No activity - updating cache timers.
+[2025-01-17 08:24:29] No activity - updating cache timers.
+[2025-01-17 08:24:30] Thread started processing request.
+[2025-01-17 08:24:30] NS request.
+[2025-01-17 08:24:30] Forwarding.
+[2025-01-17 08:24:30] Added to cache: google.com
+[2025-01-17 08:24:30] Removed from cache: www.example.com
+[2025-01-17 08:24:30] Added to cache: google.com
+[2025-01-17 08:24:30] Removed from cache: google.com
+[2025-01-17 08:24:30] Added to cache: google.com
+[2025-01-17 08:24:30] Removed from cache: google.com
+[2025-01-17 08:24:30] Added to cache: google.com
+[2025-01-17 08:24:30] Thread finished processing request.
+[2025-01-17 08:24:31] No activity - updating cache timers.
+[2025-01-17 08:24:32] No activity - updating cache timers.
+[2025-01-17 08:24:33] No activity - updating cache timers.
+[2025-01-17 08:24:34] No activity - updating cache timers.
+[2025-01-17 08:24:35] No activity - updating cache timers.
+[2025-01-17 08:24:36] No activity - updating cache timers.
+[2025-01-17 08:24:37] No activity - updating cache timers.
+[2025-01-17 08:24:38] No activity - updating cache timers.
+[2025-01-17 08:24:38] Thread started processing request.
+[2025-01-17 08:24:38] Reverse request.
+[2025-01-17 08:24:38] Forwarding.
+[2025-01-17 08:24:39] Removed from cache: google.com
+[2025-01-17 08:24:39] Added to cache: dns.google
+[2025-01-17 08:24:39] Thread finished processing request.
+[2025-01-17 08:24:39] No activity - updating cache timers.
+[2025-01-17 08:24:40] No activity - updating cache timers.
+[2025-01-17 08:24:41] No activity - updating cache timers.
+[2025-01-17 08:24:42] No activity - updating cache timers.
+[2025-01-17 08:24:43] No activity - updating cache timers.
+[2025-01-17 08:24:45] No activity - updating cache timers.
+[2025-01-17 08:24:46] No activity - updating cache timers.
+[2025-01-17 08:24:47] No activity - updating cache timers.
+[2025-01-17 08:24:48] No activity - updating cache timers.
+[2025-01-17 08:24:49] No activity - updating cache timers.
+[2025-01-17 08:24:50] No activity - updating cache timers.
+[2025-01-17 08:24:51] No activity - updating cache timers.
+[2025-01-17 08:24:52] No activity - updating cache timers.
+[2025-01-17 08:24:53] No activity - updating cache timers.
+[2025-01-17 08:24:54] No activity - updating cache timers.
+[2025-01-17 08:24:55] No activity - updating cache timers.
+[2025-01-17 08:24:56] No activity - updating cache timers.
+[2025-01-17 08:24:57] No activity - updating cache timers.
+[2025-01-17 08:24:58] No activity - updating cache timers.
+[2025-01-17 08:24:59] No activity - updating cache timers.
+[2025-01-17 08:25:00] No activity - updating cache timers.
+[2025-01-17 08:25:01] No activity - updating cache timers.
+[2025-01-17 08:25:02] No activity - updating cache timers.
+[2025-01-17 08:25:03] No activity - updating cache timers.
+[2025-01-17 08:25:04] No activity - updating cache timers.
+[2025-01-17 08:25:05] No activity - updating cache timers.
+[2025-01-17 08:25:06] No activity - updating cache timers.
+[2025-01-17 08:25:07] No activity - updating cache timers.
+[2025-01-17 08:25:08] No activity - updating cache timers.
+[2025-01-17 08:25:09] No activity - updating cache timers.
+[2025-01-17 08:25:10] No activity - updating cache timers.
+[2025-01-17 08:25:11] No activity - updating cache timers.
+[2025-01-17 08:25:12] No activity - updating cache timers.
+[2025-01-17 08:25:13] No activity - updating cache timers.
+[2025-01-17 08:25:14] No activity - updating cache timers.
+[2025-01-17 08:25:15] No activity - updating cache timers.
+[2025-01-17 08:25:16] No activity - updating cache timers.
+[2025-01-17 08:25:17] No activity - updating cache timers.
+[2025-01-17 08:25:18] No activity - updating cache timers.
+[2025-01-17 08:25:19] No activity - updating cache timers.
+[2025-01-17 08:25:20] No activity - updating cache timers.
+[2025-01-17 08:25:21] No activity - updating cache timers.
+[2025-01-17 08:25:22] No activity - updating cache timers.
+[2025-01-17 08:25:23] No activity - updating cache timers.
+[2025-01-17 08:25:24] No activity - updating cache timers.
+[2025-01-17 08:25:25] No activity - updating cache timers.
+[2025-01-17 08:25:26] No activity - updating cache timers.
+[2025-01-17 08:25:27] No activity - updating cache timers.
+[2025-01-17 08:25:28] No activity - updating cache timers.
+[2025-01-17 08:25:29] No activity - updating cache timers.
+[2025-01-17 08:25:30] No activity - updating cache timers.
+[2025-01-17 08:25:31] No activity - updating cache timers.
+[2025-01-17 08:25:32] No activity - updating cache timers.
+[2025-01-17 08:25:33] No activity - updating cache timers.
+[2025-01-17 08:25:34] No activity - updating cache timers.
+[2025-01-17 08:25:35] No activity - updating cache timers.
+[2025-01-17 08:25:36] No activity - updating cache timers.
+[2025-01-17 08:25:37] No activity - updating cache timers.
+[2025-01-17 08:25:38] No activity - updating cache timers.
+[2025-01-17 08:25:39] No activity - updating cache timers.
+[2025-01-17 08:25:40] No activity - updating cache timers.
+[2025-01-17 08:25:41] No activity - updating cache timers.
+[2025-01-17 08:25:42] No activity - updating cache timers.
+[2025-01-17 08:25:43] No activity - updating cache timers.
+[2025-01-17 08:25:44] No activity - updating cache timers.
+[2025-01-17 08:25:45] No activity - updating cache timers.
+[2025-01-17 08:25:46] No activity - updating cache timers.
+[2025-01-17 08:25:47] No activity - updating cache timers.
+[2025-01-17 08:25:48] No activity - updating cache timers.
+[2025-01-17 08:25:49] No activity - updating cache timers.
+[2025-01-17 08:25:50] No activity - updating cache timers.
+[2025-01-17 08:25:51] No activity - updating cache timers.
+[2025-01-17 08:25:52] No activity - updating cache timers.
+[2025-01-17 08:25:52] Thread started processing request.
+[2025-01-17 08:25:52] Dig request.
+[2025-01-17 08:25:52] DIG request.
+[2025-01-17 08:25:52] DNS response sent to client!
+[2025-01-17 08:25:52] Thread finished processing request.
+[2025-01-17 08:25:53] No activity - updating cache timers.
+[2025-01-17 08:25:54] No activity - updating cache timers.
+[2025-01-17 08:25:55] No activity - updating cache timers.
+[2025-01-17 08:25:56] No activity - updating cache timers.
+[2025-01-17 08:25:57] No activity - updating cache timers.
+[2025-01-17 08:25:58] No activity - updating cache timers.
+[2025-01-17 08:25:59] No activity - updating cache timers.
+[2025-01-17 08:26:00] No activity - updating cache timers.
+[2025-01-17 08:26:01] No activity - updating cache timers.
+[2025-01-17 08:26:02] No activity - updating cache timers.
+[2025-01-17 08:26:03] No activity - updating cache timers.
+[2025-01-17 08:26:04] No activity - updating cache timers.
+[2025-01-17 08:26:05] No activity - updating cache timers.
+[2025-01-17 08:26:06] No activity - updating cache timers.
+[2025-01-17 08:26:07] No activity - updating cache timers.
+[2025-01-17 08:26:08] No activity - updating cache timers.
+[2025-01-17 08:26:09] No activity - updating cache timers.
+[2025-01-17 08:26:10] No activity - updating cache timers.
+[2025-01-17 08:26:11] No activity - updating cache timers.
+[2025-01-17 08:26:12] No activity - updating cache timers.
+[2025-01-17 08:26:13] No activity - updating cache timers.
+[2025-01-17 08:26:14] No activity - updating cache timers.
+[2025-01-17 08:26:15] No activity - updating cache timers.
+[2025-01-17 08:26:16] Thread started processing request.
+[2025-01-17 08:26:16] Dig request.
+[2025-01-17 08:26:16] DIG request.
+[2025-01-17 08:26:16] DNS response sent to client!
+[2025-01-17 08:26:16] Thread finished processing request.
+[2025-01-17 08:26:17] No activity - updating cache timers.
+[2025-01-17 08:26:18] No activity - updating cache timers.
+[2025-01-17 08:26:19] No activity - updating cache timers.
+[2025-01-17 08:26:20] No activity - updating cache timers.
+[2025-01-17 08:26:21] No activity - updating cache timers.
+[2025-01-17 08:26:22] No activity - updating cache timers.
+[2025-01-17 08:26:23] No activity - updating cache timers.
+[2025-01-17 08:26:24] No activity - updating cache timers.
+[2025-01-17 08:26:25] No activity - updating cache timers.
+[2025-01-17 08:26:26] No activity - updating cache timers.
+[2025-01-17 08:26:27] No activity - updating cache timers.
+[2025-01-17 08:26:28] No activity - updating cache timers.
+[2025-01-17 08:26:29] No activity - updating cache timers.
+[2025-01-17 08:26:30] No activity - updating cache timers.
+[2025-01-17 08:26:31] No activity - updating cache timers.
+[2025-01-17 08:26:32] No activity - updating cache timers.
+[2025-01-17 08:26:34] No activity - updating cache timers.
+[2025-01-17 08:26:34] Exit command received. Shutting down...
+[2025-01-17 08:26:34] Shutting down server gracefully...
+[2025-01-17 08:26:34] Resources released. Server stopped.
+[2025-01-17 08:34:25] Bind successful!
+[2025-01-17 08:34:25] DNS Server started...
+[2025-01-17 08:34:26] No activity - updating cache timers.
+[2025-01-17 08:34:27] No activity - updating cache timers.
+[2025-01-17 08:34:28] No activity - updating cache timers.
+[2025-01-17 08:34:29] No activity - updating cache timers.
+[2025-01-17 08:34:30] No activity - updating cache timers.
+[2025-01-17 08:34:31] No activity - updating cache timers.
+[2025-01-17 08:34:32] No activity - updating cache timers.
+[2025-01-17 08:34:33] No activity - updating cache timers.
+[2025-01-17 08:34:34] No activity - updating cache timers.
+[2025-01-17 08:34:35] No activity - updating cache timers.
+[2025-01-17 08:34:36] No activity - updating cache timers.
+[2025-01-17 08:34:37] No activity - updating cache timers.
+[2025-01-17 08:34:38] No activity - updating cache timers.
+[2025-01-17 08:34:39] No activity - updating cache timers.
+[2025-01-17 08:34:40] No activity - updating cache timers.
+[2025-01-17 08:34:41] No activity - updating cache timers.
+[2025-01-17 08:34:42] No activity - updating cache timers.
+[2025-01-17 08:34:43] No activity - updating cache timers.
+[2025-01-17 08:34:44] No activity - updating cache timers.
+[2025-01-17 08:34:45] No activity - updating cache timers.
+[2025-01-17 08:34:46] No activity - updating cache timers.
+[2025-01-17 08:34:47] No activity - updating cache timers.
+[2025-01-17 08:34:48] No activity - updating cache timers.
+[2025-01-17 08:34:49] No activity - updating cache timers.
+[2025-01-17 08:34:50] No activity - updating cache timers.
+[2025-01-17 08:34:51] No activity - updating cache timers.
+[2025-01-17 08:34:52] Thread started processing request.
+[2025-01-17 08:34:52] IPv4 request.
+[2025-01-17 08:34:52] From MasterFile.
+[2025-01-17 08:34:52] Added to cache: www.example.com
+[2025-01-17 08:34:52] Thread finished processing request.
+[2025-01-17 08:34:52] Thread started processing request.
+[2025-01-17 08:34:52] IPv4 request.
+[2025-01-17 08:34:52] From cache.
+[2025-01-17 08:34:52] Thread finished processing request.
+[2025-01-17 08:34:53] No activity - updating cache timers.
+[2025-01-17 08:34:54] No activity - updating cache timers.
+[2025-01-17 08:34:55] No activity - updating cache timers.
+[2025-01-17 08:34:56] No activity - updating cache timers.
+[2025-01-17 08:34:57] No activity - updating cache timers.
+[2025-01-17 08:34:58] No activity - updating cache timers.
+[2025-01-17 08:34:59] No activity - updating cache timers.
+[2025-01-17 08:35:00] No activity - updating cache timers.
+[2025-01-17 08:35:01] No activity - updating cache timers.
+[2025-01-17 08:35:02] No activity - updating cache timers.
+[2025-01-17 08:35:03] No activity - updating cache timers.
+[2025-01-17 08:35:04] No activity - updating cache timers.
+[2025-01-17 08:35:05] No activity - updating cache timers.
+[2025-01-17 08:35:06] No activity - updating cache timers.
+[2025-01-17 08:35:07] No activity - updating cache timers.
+[2025-01-17 08:35:08] No activity - updating cache timers.
+[2025-01-17 08:35:09] No activity - updating cache timers.
+[2025-01-17 08:35:10] No activity - updating cache timers.
+[2025-01-17 08:35:11] No activity - updating cache timers.
+[2025-01-17 08:35:12] No activity - updating cache timers.
+[2025-01-17 08:35:13] No activity - updating cache timers.
+[2025-01-17 08:35:14] No activity - updating cache timers.
+[2025-01-17 08:35:15] No activity - updating cache timers.
+[2025-01-17 08:35:16] No activity - updating cache timers.
+[2025-01-17 08:35:17] No activity - updating cache timers.
+[2025-01-17 08:35:18] No activity - updating cache timers.
+[2025-01-17 08:35:19] No activity - updating cache timers.
+[2025-01-17 08:35:20] No activity - updating cache timers.
+[2025-01-17 08:35:20] Thread started processing request.
+[2025-01-17 08:35:20] IPv4 request.
+[2025-01-17 08:35:20] From cache.
+[2025-01-17 08:35:20] Thread finished processing request.
+[2025-01-17 08:35:20] Thread started processing request.
+[2025-01-17 08:35:20] IPv4 request.
+[2025-01-17 08:35:20] From cache.
+[2025-01-17 08:35:20] Thread finished processing request.
+[2025-01-17 08:35:21] No activity - updating cache timers.
+[2025-01-17 08:35:22] No activity - updating cache timers.
+[2025-01-17 08:35:23] No activity - updating cache timers.
+[2025-01-17 08:35:24] No activity - updating cache timers.
+[2025-01-17 08:35:25] No activity - updating cache timers.
+[2025-01-17 08:35:26] No activity - updating cache timers.
+[2025-01-17 08:35:27] No activity - updating cache timers.
+[2025-01-17 08:35:28] No activity - updating cache timers.
+[2025-01-17 08:35:29] No activity - updating cache timers.
+[2025-01-17 08:35:30] No activity - updating cache timers.
+[2025-01-17 08:35:31] No activity - updating cache timers.
+[2025-01-17 08:35:32] No activity - updating cache timers.
+[2025-01-17 08:35:33] No activity - updating cache timers.
+[2025-01-17 08:35:34] No activity - updating cache timers.
+[2025-01-17 08:35:35] No activity - updating cache timers.
+[2025-01-17 08:35:36] No activity - updating cache timers.
+[2025-01-17 08:35:37] No activity - updating cache timers.
+[2025-01-17 08:35:37] Thread started processing request.
+[2025-01-17 08:35:37] AAAA request.
+[2025-01-17 08:35:37] Thread started processing request.
+[2025-01-17 08:35:37] AAAA request.
+[2025-01-17 08:35:37] From MasterFile.
+[2025-01-17 08:35:37] Added to cache: www.example.com
+[2025-01-17 08:35:37] From cache.
+[2025-01-17 08:35:37] Thread finished processing request.
+[2025-01-17 08:35:37] Thread finished processing request.
+[2025-01-17 08:35:38] No activity - updating cache timers.
+[2025-01-17 08:35:39] No activity - updating cache timers.
+[2025-01-17 08:35:40] No activity - updating cache timers.
+[2025-01-17 08:35:41] No activity - updating cache timers.
+[2025-01-17 08:35:42] No activity - updating cache timers.
+[2025-01-17 08:35:43] No activity - updating cache timers.
+[2025-01-17 08:35:44] No activity - updating cache timers.
+[2025-01-17 08:35:45] No activity - updating cache timers.
+[2025-01-17 08:35:46] No activity - updating cache timers.
+[2025-01-17 08:35:46] Thread started processing request.
+[2025-01-17 08:35:46] NS request.
+[2025-01-17 08:35:46] From MasterFile.
+[2025-01-17 08:35:46] Removed from cache: www.example.com
+[2025-01-17 08:35:46] Added to cache: www.example.com
+[2025-01-17 08:35:46] Thread started processing request.
+[2025-01-17 08:35:46] NS request.
+[2025-01-17 08:35:46] Thread finished processing request.
+[2025-01-17 08:35:46] From cache.
+[2025-01-17 08:35:46] Thread finished processing request.
+[2025-01-17 08:35:47] No activity - updating cache timers.
+[2025-01-17 08:35:48] No activity - updating cache timers.
+[2025-01-17 08:35:49] No activity - updating cache timers.
+[2025-01-17 08:35:50] No activity - updating cache timers.
+[2025-01-17 08:35:51] No activity - updating cache timers.
+[2025-01-17 08:35:52] No activity - updating cache timers.
+[2025-01-17 08:35:53] No activity - updating cache timers.
+[2025-01-17 08:35:54] Thread started processing request.
+[2025-01-17 08:35:54] IPv4 request.
+[2025-01-17 08:35:54] Thread started processing request.
+[2025-01-17 08:35:54] IPv4 request.
+[2025-01-17 08:35:54] Forwarding.
+[2025-01-17 08:35:54] Removed from cache: www.example.com
+[2025-01-17 08:35:54] Added to cache: www.google.com
+[2025-01-17 08:35:54] Thread finished processing request.
+[2025-01-17 08:35:54] From cache.
+[2025-01-17 08:35:54] Thread finished processing request.
+[2025-01-17 08:35:55] No activity - updating cache timers.
+[2025-01-17 08:35:56] No activity - updating cache timers.
+[2025-01-17 08:35:57] No activity - updating cache timers.
+[2025-01-17 08:35:58] No activity - updating cache timers.
+[2025-01-17 08:35:59] No activity - updating cache timers.
+[2025-01-17 08:36:00] No activity - updating cache timers.
+[2025-01-17 08:36:01] No activity - updating cache timers.
+[2025-01-17 08:36:02] No activity - updating cache timers.
+[2025-01-17 08:36:03] No activity - updating cache timers.
+[2025-01-17 08:36:03] Thread started processing request.
+[2025-01-17 08:36:03] MX request.
+[2025-01-17 08:36:03] Forwarding.
+[2025-01-17 08:36:03] Thread started processing request.
+[2025-01-17 08:36:03] MX request.
+[2025-01-17 08:36:04] Thread finished processing request.
+[2025-01-17 08:36:04] Forwarding.
+[2025-01-17 08:36:04] Thread finished processing request.
+[2025-01-17 08:36:04] No activity - updating cache timers.
+[2025-01-17 08:36:05] No activity - updating cache timers.
+[2025-01-17 08:36:06] No activity - updating cache timers.
+[2025-01-17 08:36:07] No activity - updating cache timers.
+[2025-01-17 08:36:08] No activity - updating cache timers.
+[2025-01-17 08:36:09] No activity - updating cache timers.
+[2025-01-17 08:36:10] No activity - updating cache timers.
+[2025-01-17 08:36:11] No activity - updating cache timers.
+[2025-01-17 08:36:12] No activity - updating cache timers.
+[2025-01-17 08:36:13] No activity - updating cache timers.
+[2025-01-17 08:36:14] No activity - updating cache timers.
+[2025-01-17 08:36:15] No activity - updating cache timers.
+[2025-01-17 08:36:16] No activity - updating cache timers.
+[2025-01-17 08:36:17] No activity - updating cache timers.
+[2025-01-17 08:36:18] No activity - updating cache timers.
+[2025-01-17 08:36:19] No activity - updating cache timers.
+[2025-01-17 08:36:20] No activity - updating cache timers.
+[2025-01-17 08:36:21] No activity - updating cache timers.
+[2025-01-17 08:36:22] Thread started processing request.
+[2025-01-17 08:36:22] MX request.
+[2025-01-17 08:36:22] From MasterFile.
+[2025-01-17 08:36:22] Thread finished processing request.
+[2025-01-17 08:36:22] Thread started processing request.
+[2025-01-17 08:36:22] MX request.
+[2025-01-17 08:36:22] From MasterFile.
+[2025-01-17 08:36:22] Thread finished processing request.
+[2025-01-17 08:36:23] No activity - updating cache timers.
+[2025-01-17 08:36:24] No activity - updating cache timers.
+[2025-01-17 08:36:25] No activity - updating cache timers.
+[2025-01-17 08:36:26] No activity - updating cache timers.
+[2025-01-17 08:36:27] No activity - updating cache timers.
+[2025-01-17 08:36:28] No activity - updating cache timers.
+[2025-01-17 08:36:29] No activity - updating cache timers.
+[2025-01-17 08:36:30] No activity - updating cache timers.
+[2025-01-17 08:36:31] No activity - updating cache timers.
+[2025-01-17 08:36:32] No activity - updating cache timers.
+[2025-01-17 08:36:33] No activity - updating cache timers.
+[2025-01-17 08:36:34] No activity - updating cache timers.
+[2025-01-17 08:36:35] No activity - updating cache timers.
+[2025-01-17 08:36:36] No activity - updating cache timers.
+[2025-01-17 08:36:37] No activity - updating cache timers.
+[2025-01-17 08:36:38] No activity - updating cache timers.
+[2025-01-17 08:36:39] No activity - updating cache timers.
+[2025-01-17 08:36:40] No activity - updating cache timers.
+[2025-01-17 08:36:41] No activity - updating cache timers.
+[2025-01-17 08:36:42] No activity - updating cache timers.
+[2025-01-17 08:36:43] No activity - updating cache timers.
+[2025-01-17 08:36:44] No activity - updating cache timers.
+[2025-01-17 08:36:45] No activity - updating cache timers.
+[2025-01-17 08:36:46] No activity - updating cache timers.
+[2025-01-17 08:36:47] No activity - updating cache timers.
+[2025-01-17 08:36:48] No activity - updating cache timers.
+[2025-01-17 08:36:48] Thread started processing request.
+[2025-01-17 08:36:48] Dig request.
+[2025-01-17 08:36:48] Thread started processing request.
+[2025-01-17 08:36:48] Dig request.
+[2025-01-17 08:36:48] DIG request.
+[2025-01-17 08:36:48] DIG request.
+[2025-01-17 08:36:49] No activity - updating cache timers.
+[2025-01-17 08:36:50] DNS response sent to client!
+[2025-01-17 08:36:50] Thread finished processing request.
+[2025-01-17 08:36:50] DNS response sent to client!
+[2025-01-17 08:36:50] Thread finished processing request.
+[2025-01-17 08:36:50] No activity - updating cache timers.
+[2025-01-17 08:36:51] No activity - updating cache timers.
+[2025-01-17 08:36:52] No activity - updating cache timers.
+[2025-01-17 08:36:53] No activity - updating cache timers.
+[2025-01-17 08:36:54] No activity - updating cache timers.
+[2025-01-17 08:36:55] No activity - updating cache timers.
+[2025-01-17 08:36:56] No activity - updating cache timers.
+[2025-01-17 08:36:57] No activity - updating cache timers.
+[2025-01-17 08:36:58] No activity - updating cache timers.
+[2025-01-17 08:36:59] No activity - updating cache timers.
+[2025-01-17 08:37:00] No activity - updating cache timers.
+[2025-01-17 08:37:01] No activity - updating cache timers.
+[2025-01-17 08:37:02] No activity - updating cache timers.
+[2025-01-17 08:37:03] No activity - updating cache timers.
+[2025-01-17 08:37:04] No activity - updating cache timers.
+[2025-01-17 08:37:05] No activity - updating cache timers.
+[2025-01-17 08:37:06] No activity - updating cache timers.
+[2025-01-17 08:37:07] No activity - updating cache timers.
+[2025-01-17 08:37:07] Exit command received. Shutting down...
+[2025-01-17 08:37:07] Shutting down server gracefully...
+[2025-01-17 08:37:07] Resources released. Server stopped.
+[2025-01-17 08:37:46] Bind successful!
+[2025-01-17 08:37:46] DNS Server started...
+[2025-01-17 08:37:47] No activity - updating cache timers.
+[2025-01-17 08:37:48] No activity - updating cache timers.
+[2025-01-17 08:37:49] No activity - updating cache timers.
+[2025-01-17 08:37:50] No activity - updating cache timers.
+[2025-01-17 08:37:51] No activity - updating cache timers.
+[2025-01-17 08:37:51] Thread started processing request.
+[2025-01-17 08:37:51] Reverse request.
+[2025-01-17 08:37:51] Forwarding.
+[2025-01-17 08:37:51] Thread started processing request.
+[2025-01-17 08:37:51] Reverse request.
+[2025-01-17 08:37:52] No activity - updating cache timers.
+[2025-01-17 08:37:53] No activity - updating cache timers.
+[2025-01-17 08:37:54] No activity - updating cache timers.
+[2025-01-17 08:37:55] No activity - updating cache timers.
+[2025-01-17 08:37:56] No activity - updating cache timers.
+[2025-01-17 08:37:56] Added to cache: dns.google
+[2025-01-17 08:37:56] Thread finished processing request.
+[2025-01-17 08:37:56] From cache.
+[2025-01-17 08:37:56] Thread finished processing request.
+[2025-01-17 08:37:57] No activity - updating cache timers.
+[2025-01-17 08:37:58] No activity - updating cache timers.
+[2025-01-17 08:37:59] No activity - updating cache timers.
+[2025-01-17 08:38:00] No activity - updating cache timers.
+[2025-01-17 08:38:01] No activity - updating cache timers.
+[2025-01-17 08:38:02] No activity - updating cache timers.
+[2025-01-17 08:38:03] Thread started processing request.
+[2025-01-17 08:38:03] Reverse request.
+[2025-01-17 08:38:03] From cache.
+[2025-01-17 08:38:03] Thread finished processing request.
+[2025-01-17 08:38:03] Thread started processing request.
+[2025-01-17 08:38:03] Reverse request.
+[2025-01-17 08:38:03] From cache.
+[2025-01-17 08:38:03] Thread finished processing request.
+[2025-01-17 08:38:04] No activity - updating cache timers.
+[2025-01-17 08:38:05] No activity - updating cache timers.
+[2025-01-17 08:38:06] No activity - updating cache timers.
+[2025-01-17 08:38:07] No activity - updating cache timers.
+[2025-01-17 08:38:08] No activity - updating cache timers.
+[2025-01-17 08:38:09] No activity - updating cache timers.
+[2025-01-17 08:38:10] No activity - updating cache timers.
+[2025-01-17 08:38:11] No activity - updating cache timers.
+[2025-01-17 08:38:12] No activity - updating cache timers.
+[2025-01-17 08:38:13] No activity - updating cache timers.
+[2025-01-17 08:38:14] SIGINT received. Initiating graceful shutdown...
+[2025-01-17 08:38:14] Shutting down server gracefully...
+[2025-01-17 08:38:14] Resources released. Server stopped.
+[2025-01-17 08:54:39] Bind successful!
+[2025-01-17 08:54:39] DNS Server started...
+[2025-01-17 08:54:40] No activity - updating cache timers.
+[2025-01-17 08:54:41] No activity - updating cache timers.
+[2025-01-17 08:54:42] No activity - updating cache timers.
+[2025-01-17 08:54:43] No activity - updating cache timers.
+[2025-01-17 08:54:44] No activity - updating cache timers.
+[2025-01-17 08:54:45] No activity - updating cache timers.
+[2025-01-17 08:54:46] No activity - updating cache timers.
+[2025-01-17 08:54:47] No activity - updating cache timers.
+[2025-01-17 08:54:48] No activity - updating cache timers.
+[2025-01-17 08:54:49] No activity - updating cache timers.
+[2025-01-17 08:54:49] Thread started processing request.
+[2025-01-17 08:54:49] IPv4 request.
+[2025-01-17 08:54:49] Thread started processing request.
+[2025-01-17 08:54:49] IPv4 request.
+[2025-01-17 08:54:49] Forwarding.
+[2025-01-17 08:54:50] Added to cache: www.google.com
+[2025-01-17 08:54:50] Thread finished processing request.
+[2025-01-17 08:54:50] From cache.
+[2025-01-17 08:54:50] Thread finished processing request.
+[2025-01-17 08:54:50] No activity - updating cache timers.
+[2025-01-17 08:54:51] No activity - updating cache timers.
+[2025-01-17 08:54:52] No activity - updating cache timers.
+[2025-01-17 08:54:53] No activity - updating cache timers.
+[2025-01-17 08:54:54] No activity - updating cache timers.
+[2025-01-17 08:54:55] No activity - updating cache timers.
+[2025-01-17 08:54:56] No activity - updating cache timers.
+[2025-01-17 08:54:57] SIGINT received. Initiating graceful shutdown...
+[2025-01-17 08:54:57] Shutting down server gracefully...
+[2025-01-17 08:54:57] Resources released. Server stopped.
+[2025-01-17 09:22:37] Bind successful!
+[2025-01-17 09:22:37] DNS Server started...
+[2025-01-17 09:22:38] No activity - updating cache timers.
+[2025-01-17 09:22:39] No activity - updating cache timers.
+[2025-01-17 09:22:40] No activity - updating cache timers.
+[2025-01-17 09:22:41] No activity - updating cache timers.
+[2025-01-17 09:22:42] No activity - updating cache timers.
+[2025-01-17 09:22:43] No activity - updating cache timers.
+[2025-01-17 09:22:44] No activity - updating cache timers.
+[2025-01-17 09:22:45] No activity - updating cache timers.
+[2025-01-17 09:22:46] No activity - updating cache timers.
+[2025-01-17 09:22:47] No activity - updating cache timers.
+[2025-01-17 09:22:48] No activity - updating cache timers.
+[2025-01-17 09:22:49] No activity - updating cache timers.
+[2025-01-17 09:22:50] No activity - updating cache timers.
+[2025-01-17 09:22:51] No activity - updating cache timers.
+[2025-01-17 09:22:52] No activity - updating cache timers.
+[2025-01-17 09:22:53] No activity - updating cache timers.
+[2025-01-17 09:22:54] No activity - updating cache timers.
+[2025-01-17 09:22:55] No activity - updating cache timers.
+[2025-01-17 09:22:56] No activity - updating cache timers.
+[2025-01-17 09:22:57] No activity - updating cache timers.
+[2025-01-17 09:22:58] No activity - updating cache timers.
+[2025-01-17 09:22:59] No activity - updating cache timers.
+[2025-01-17 09:23:00] No activity - updating cache timers.
+[2025-01-17 09:23:01] No activity - updating cache timers.
+[2025-01-17 09:23:02] No activity - updating cache timers.
+[2025-01-17 09:23:03] No activity - updating cache timers.
+[2025-01-17 09:23:04] No activity - updating cache timers.
+[2025-01-17 09:23:04] Thread started processing request.
+[2025-01-17 09:23:04] IPv4 request.
+[2025-01-17 09:23:04] From MasterFile.
+[2025-01-17 09:23:04] Added to cache: www.example.com
+[2025-01-17 09:23:04] Thread finished processing request.
+[2025-01-17 09:23:04] Thread started processing request.
+[2025-01-17 09:23:04] IPv4 request.
+[2025-01-17 09:23:04] From cache.
+[2025-01-17 09:23:04] Thread finished processing request.
+[2025-01-17 09:23:05] No activity - updating cache timers.
+[2025-01-17 09:23:06] No activity - updating cache timers.
+[2025-01-17 09:23:07] No activity - updating cache timers.
+[2025-01-17 09:23:08] No activity - updating cache timers.
+[2025-01-17 09:23:09] No activity - updating cache timers.
+[2025-01-17 09:23:10] No activity - updating cache timers.
+[2025-01-17 09:23:11] No activity - updating cache timers.
+[2025-01-17 09:23:12] No activity - updating cache timers.
+[2025-01-17 09:23:13] No activity - updating cache timers.
+[2025-01-17 09:23:14] No activity - updating cache timers.
+[2025-01-17 09:23:15] No activity - updating cache timers.
+[2025-01-17 09:23:16] No activity - updating cache timers.
+[2025-01-17 09:23:17] No activity - updating cache timers.
+[2025-01-17 09:23:18] No activity - updating cache timers.
+[2025-01-17 09:23:19] No activity - updating cache timers.
+[2025-01-17 09:23:20] No activity - updating cache timers.
+[2025-01-17 09:23:21] No activity - updating cache timers.
+[2025-01-17 09:23:22] No activity - updating cache timers.
+[2025-01-17 09:23:23] No activity - updating cache timers.
+[2025-01-17 09:23:24] No activity - updating cache timers.
+[2025-01-17 09:23:25] No activity - updating cache timers.
+[2025-01-17 09:23:26] No activity - updating cache timers.
+[2025-01-17 09:23:27] No activity - updating cache timers.
+[2025-01-17 09:23:28] No activity - updating cache timers.
+[2025-01-17 09:23:29] No activity - updating cache timers.
+[2025-01-17 09:23:30] No activity - updating cache timers.
+[2025-01-17 09:23:31] Thread started processing request.
+[2025-01-17 09:23:31] Thread started processing request.
+[2025-01-17 09:23:31] IPv4 request.
+[2025-01-17 09:23:31] IPv4 request.
+[2025-01-17 09:23:31] Forwarding.
+[2025-01-17 09:23:31] Added to cache: www.google.com
+[2025-01-17 09:23:31] Thread finished processing request.
+[2025-01-17 09:23:31] From cache.
+[2025-01-17 09:23:31] Thread finished processing request.
+[2025-01-17 09:23:32] No activity - updating cache timers.
+[2025-01-17 09:23:33] No activity - updating cache timers.
+[2025-01-17 09:23:34] No activity - updating cache timers.
+[2025-01-17 09:23:35] No activity - updating cache timers.
+[2025-01-17 09:23:36] No activity - updating cache timers.
+[2025-01-17 09:23:37] No activity - updating cache timers.
+[2025-01-17 09:23:38] No activity - updating cache timers.
+[2025-01-17 09:23:39] No activity - updating cache timers.
+[2025-01-17 09:23:40] No activity - updating cache timers.
+[2025-01-17 09:23:41] No activity - updating cache timers.
+[2025-01-17 09:23:42] No activity - updating cache timers.
+[2025-01-17 09:23:43] No activity - updating cache timers.
+[2025-01-17 09:23:44] No activity - updating cache timers.
+[2025-01-17 09:23:45] No activity - updating cache timers.
+[2025-01-17 09:23:45] Thread started processing request.
+[2025-01-17 09:23:45] AAAA request.
+[2025-01-17 09:23:45] From MasterFile.
+[2025-01-17 09:23:45] Removed from cache: www.example.com
+[2025-01-17 09:23:45] Added to cache: example.com
+[2025-01-17 09:23:45] Thread finished processing request.
+[2025-01-17 09:23:45] Thread started processing request.
+[2025-01-17 09:23:45] AAAA request.
+[2025-01-17 09:23:45] From cache.
+[2025-01-17 09:23:45] Thread finished processing request.
+[2025-01-17 09:23:46] No activity - updating cache timers.
+[2025-01-17 09:23:47] No activity - updating cache timers.
+[2025-01-17 09:23:48] No activity - updating cache timers.
+[2025-01-17 09:23:49] No activity - updating cache timers.
+[2025-01-17 09:23:50] No activity - updating cache timers.
+[2025-01-17 09:23:51] No activity - updating cache timers.
+[2025-01-17 09:23:52] No activity - updating cache timers.
+[2025-01-17 09:23:53] No activity - updating cache timers.
+[2025-01-17 09:23:54] No activity - updating cache timers.
+[2025-01-17 09:23:55] No activity - updating cache timers.
+[2025-01-17 09:23:56] No activity - updating cache timers.
+[2025-01-17 09:23:57] No activity - updating cache timers.
+[2025-01-17 09:23:58] No activity - updating cache timers.
+[2025-01-17 09:23:59] No activity - updating cache timers.
+[2025-01-17 09:24:00] No activity - updating cache timers.
+[2025-01-17 09:24:01] No activity - updating cache timers.
+[2025-01-17 09:24:02] No activity - updating cache timers.
+[2025-01-17 09:24:03] Thread started processing request.
+[2025-01-17 09:24:03] MX request.
+[2025-01-17 09:24:03] Forwarding.
+[2025-01-17 09:24:03] Thread started processing request.
+[2025-01-17 09:24:03] MX request.
+[2025-01-17 09:24:03] Thread finished processing request.
+[2025-01-17 09:24:03] Forwarding.
+[2025-01-17 09:24:04] Thread finished processing request.
+[2025-01-17 09:24:04] No activity - updating cache timers.
+[2025-01-17 09:24:05] No activity - updating cache timers.
+[2025-01-17 09:24:06] No activity - updating cache timers.
+[2025-01-17 09:24:07] No activity - updating cache timers.
+[2025-01-17 09:24:08] No activity - updating cache timers.
+[2025-01-17 09:24:09] Thread started processing request.
+[2025-01-17 09:24:09] MX request.
+[2025-01-17 09:24:09] Thread started processing request.
+[2025-01-17 09:24:09] MX request.
+[2025-01-17 09:24:09] From MasterFile.
+[2025-01-17 09:24:09] Thread finished processing request.
+[2025-01-17 09:24:09] From MasterFile.
+[2025-01-17 09:24:09] Thread finished processing request.
+[2025-01-17 09:24:10] No activity - updating cache timers.
+[2025-01-17 09:24:11] No activity - updating cache timers.
+[2025-01-17 09:24:12] No activity - updating cache timers.
+[2025-01-17 09:24:13] No activity - updating cache timers.
+[2025-01-17 09:24:14] No activity - updating cache timers.
+[2025-01-17 09:24:15] No activity - updating cache timers.
+[2025-01-17 09:24:16] No activity - updating cache timers.
+[2025-01-17 09:24:17] No activity - updating cache timers.
+[2025-01-17 09:24:18] No activity - updating cache timers.
+[2025-01-17 09:24:19] No activity - updating cache timers.
+[2025-01-17 09:24:20] No activity - updating cache timers.
+[2025-01-17 09:24:21] No activity - updating cache timers.
+[2025-01-17 09:24:22] No activity - updating cache timers.
+[2025-01-17 09:24:23] No activity - updating cache timers.
+[2025-01-17 09:24:24] No activity - updating cache timers.
+[2025-01-17 09:24:25] No activity - updating cache timers.
+[2025-01-17 09:24:26] No activity - updating cache timers.
+[2025-01-17 09:24:26] Thread started processing request.
+[2025-01-17 09:24:26] NS request.
+[2025-01-17 09:24:26] From MasterFile.
+[2025-01-17 09:24:26] Thread started processing request.
+[2025-01-17 09:24:26] NS request.
+[2025-01-17 09:24:26] Removed from cache: www.google.com
+[2025-01-17 09:24:26] Added to cache: www.example.com
+[2025-01-17 09:24:26] Thread finished processing request.
+[2025-01-17 09:24:26] From cache.
+[2025-01-17 09:24:26] Thread finished processing request.
+[2025-01-17 09:24:27] No activity - updating cache timers.
+[2025-01-17 09:24:28] No activity - updating cache timers.
+[2025-01-17 09:24:29] No activity - updating cache timers.
+[2025-01-17 09:24:30] No activity - updating cache timers.
+[2025-01-17 09:24:31] No activity - updating cache timers.
+[2025-01-17 09:24:32] No activity - updating cache timers.
+[2025-01-17 09:24:33] No activity - updating cache timers.
+[2025-01-17 09:24:34] No activity - updating cache timers.
+[2025-01-17 09:24:35] No activity - updating cache timers.
+[2025-01-17 09:24:36] No activity - updating cache timers.
+[2025-01-17 09:24:37] No activity - updating cache timers.
+[2025-01-17 09:24:38] No activity - updating cache timers.
+[2025-01-17 09:24:39] Thread started processing request.
+[2025-01-17 09:24:39] Reverse request.
+[2025-01-17 09:24:39] Forwarding.
+[2025-01-17 09:24:39] Thread started processing request.
+[2025-01-17 09:24:39] Reverse request.
+[2025-01-17 09:24:39] Removed from cache: example.com
+[2025-01-17 09:24:39] Added to cache: dns.google
+[2025-01-17 09:24:39] Thread finished processing request.
+[2025-01-17 09:24:39] From cache.
+[2025-01-17 09:24:39] Thread finished processing request.
+[2025-01-17 09:24:40] No activity - updating cache timers.
+[2025-01-17 09:24:41] No activity - updating cache timers.
+[2025-01-17 09:24:42] No activity - updating cache timers.
+[2025-01-17 09:24:43] No activity - updating cache timers.
+[2025-01-17 09:24:44] No activity - updating cache timers.
+[2025-01-17 09:24:45] No activity - updating cache timers.
+[2025-01-17 09:24:46] No activity - updating cache timers.
+[2025-01-17 09:24:47] No activity - updating cache timers.
+[2025-01-17 09:24:48] No activity - updating cache timers.
+[2025-01-17 09:24:49] No activity - updating cache timers.
+[2025-01-17 09:24:50] No activity - updating cache timers.
+[2025-01-17 09:24:51] No activity - updating cache timers.
+[2025-01-17 09:24:52] No activity - updating cache timers.
+[2025-01-17 09:24:53] No activity - updating cache timers.
+[2025-01-17 09:24:54] No activity - updating cache timers.
+[2025-01-17 09:24:55] No activity - updating cache timers.
+[2025-01-17 09:24:56] No activity - updating cache timers.
+[2025-01-17 09:24:57] No activity - updating cache timers.
+[2025-01-17 09:24:58] No activity - updating cache timers.
+[2025-01-17 09:24:59] No activity - updating cache timers.
+[2025-01-17 09:25:00] No activity - updating cache timers.
+[2025-01-17 09:25:01] No activity - updating cache timers.
+[2025-01-17 09:25:02] No activity - updating cache timers.
+[2025-01-17 09:25:03] No activity - updating cache timers.
+[2025-01-17 09:25:04] No activity - updating cache timers.
+[2025-01-17 09:25:05] No activity - updating cache timers.
+[2025-01-17 09:25:06] No activity - updating cache timers.
+[2025-01-17 09:25:07] No activity - updating cache timers.
+[2025-01-17 09:25:08] No activity - updating cache timers.
+[2025-01-17 09:25:09] No activity - updating cache timers.
+[2025-01-17 09:25:10] No activity - updating cache timers.
+[2025-01-17 09:25:11] No activity - updating cache timers.
+[2025-01-17 09:25:12] No activity - updating cache timers.
+[2025-01-17 09:25:13] No activity - updating cache timers.
+[2025-01-17 09:25:14] No activity - updating cache timers.
+[2025-01-17 09:25:14] Thread started processing request.
+[2025-01-17 09:25:14] Dig request.
+[2025-01-17 09:25:14] DIG request.
+[2025-01-17 09:25:14] Thread started processing request.
+[2025-01-17 09:25:14] Dig request.
+[2025-01-17 09:25:14] DIG request.
+[2025-01-17 09:25:15] DNS response sent to client!
+[2025-01-17 09:25:15] Thread finished processing request.
+[2025-01-17 09:25:15] DNS response sent to client!
+[2025-01-17 09:25:15] Thread finished processing request.
+[2025-01-17 09:25:15] No activity - updating cache timers.
+[2025-01-17 09:25:16] No activity - updating cache timers.
+[2025-01-17 09:25:17] No activity - updating cache timers.
+[2025-01-17 09:25:18] No activity - updating cache timers.
+[2025-01-17 09:25:19] No activity - updating cache timers.
+[2025-01-17 09:25:20] No activity - updating cache timers.
+[2025-01-17 09:25:21] No activity - updating cache timers.
+[2025-01-17 09:25:22] No activity - updating cache timers.
+[2025-01-17 09:25:23] No activity - updating cache timers.
+[2025-01-17 09:25:24] No activity - updating cache timers.
+[2025-01-17 09:25:25] No activity - updating cache timers.
+[2025-01-17 09:25:26] No activity - updating cache timers.
+[2025-01-17 09:25:27] No activity - updating cache timers.
+[2025-01-17 09:25:28] No activity - updating cache timers.
+[2025-01-17 09:25:29] SIGINT received. Initiating graceful shutdown...
+[2025-01-17 09:25:29] Shutting down server gracefully...
+[2025-01-17 09:25:29] Resources released. Server stopped.
+[2025-01-17 09:32:56] Bind successful!
+[2025-01-17 09:32:56] DNS Server started...
+[2025-01-17 09:32:57] No activity - updating cache timers.
+[2025-01-17 09:32:58] No activity - updating cache timers.
+[2025-01-17 09:32:59] No activity - updating cache timers.
+[2025-01-17 09:33:00] No activity - updating cache timers.
+[2025-01-17 09:33:01] No activity - updating cache timers.
+[2025-01-17 09:33:02] No activity - updating cache timers.
+[2025-01-17 09:33:03] No activity - updating cache timers.
+[2025-01-17 09:33:04] No activity - updating cache timers.
+[2025-01-17 09:33:05] No activity - updating cache timers.
+[2025-01-17 09:33:06] No activity - updating cache timers.
+[2025-01-17 09:33:06] Thread started processing request.
+[2025-01-17 09:33:06] IPv4 request.
+[2025-01-17 09:33:06] From MasterFile.
+[2025-01-17 09:33:06] Added to cache: www.example.com
+[2025-01-17 09:33:06] Thread finished processing request.
+[2025-01-17 09:33:06] Thread started processing request.
+[2025-01-17 09:33:06] IPv4 request.
+[2025-01-17 09:33:06] Thread started processing request.
+[2025-01-17 09:33:06] IPv4 request.
+[2025-01-17 09:33:06] From cache.
+[2025-01-17 09:33:06] Thread finished processing request.
+[2025-01-17 09:33:06] From cache.
+[2025-01-17 09:33:06] Thread finished processing request.
+[2025-01-17 09:33:06] Thread started processing request.
+[2025-01-17 09:33:06] IPv4 request.
+[2025-01-17 09:33:06] From cache.
+[2025-01-17 09:33:06] Thread finished processing request.
+[2025-01-17 09:33:07] No activity - updating cache timers.
+[2025-01-17 09:33:08] No activity - updating cache timers.
+[2025-01-17 09:33:09] No activity - updating cache timers.
+[2025-01-17 09:33:10] No activity - updating cache timers.
+[2025-01-17 09:33:11] SIGINT received. Initiating graceful shutdown...
+[2025-01-17 09:33:11] Shutting down server gracefully...
+[2025-01-17 09:33:11] Resources released. Server stopped.
